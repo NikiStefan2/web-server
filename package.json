@@ -1,0 +1,28 @@
+{
+  "name": "web-server",
+  "version": "0.0.1",
+  "description": "A Web Server library built with Node.js",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/NikiStefan2/web-server.git"
+  },
+  "keywords": [
+    "web",
+    "server",
+    "node"
+  ],
+  "author": "niki stefan",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/NikiStefan2/web-server/issues"
+  },
+  "homepage": "https://github.com/NikiStefan2/web-server#readme",
+  "type": "module",
+  "devDependencies": {
+    "@types/node": "^18.15.3"
+  }
+}
