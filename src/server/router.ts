@@ -18,9 +18,11 @@ export class Router {
         method: string,
         request: IncomingMessage,
         response: ServerResponse
-    ) {
+    ): boolean {
         const events = this._events.filter(event => event.method === method);
 
         events.forEach(event => event.callback(request, response));
+
+        return events.length > 0;
     }
 }

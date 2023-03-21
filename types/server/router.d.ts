@@ -9,5 +9,5 @@ export interface RouterEvent {
 export declare class Router {
     private _events;
     onRequest(event: RouterEvent): void;
-    emitEvents(method: string, request: IncomingMessage, response: ServerResponse): void;
+    emitEvents(method: string, request: IncomingMessage, response: ServerResponse): boolean;
 }

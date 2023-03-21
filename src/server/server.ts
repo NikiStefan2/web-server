@@ -10,13 +10,19 @@ export class Server {
         this._httpServer = new http.Server();
         this.router = router;
 
-        this._httpServer.on('request', (request, response) =>
-            router.emitEvents(
+        this._httpServer.on('request', (request, response) => {
+            if (!request.url) return;
+
+            const serverResponse = new ServerResponse(response);
+
+            const hasEvents = router.emitEvents(
                 request.method || 'GET',
                 request,
-                new ServerResponse(response)
-            )
-        );
+                serverResponse
+            );
+
+            if (!hasEvents) serverResponse.writeFile(request.url);
+        });
     }
 
     public listen(port: number, hostName: string) {
