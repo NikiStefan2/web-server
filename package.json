@@ -24,5 +24,6 @@
     "type": "module",
     "devDependencies": {
         "@types/node": "^18.15.3"
-    }
+    },
+    "types": "./types/index"
 }
